@@ -63,7 +63,7 @@ class World(JsonObject):
 
 class Instance(JsonObject):
     def __init__(self, j):
-        setattr(self, "friends", [User(x) for x in j["friends"]] if j["friends"] != False else [])
+        setattr(self, "friends", [x if isinstance(x, str) else User(x) for x in j["friends"]] if j["friends"] != False else [])
         setattr(self, "users", [User(x) for x in j["users"]] if j["users"] != False else [])
         super().__init__(j)
 
