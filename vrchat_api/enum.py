@@ -48,6 +48,8 @@ class ModerationType(Enum):
     UNMUTE  = 1
     BLOCK   = 2
     UNBLOCK = 3
+    HIDEAVATAR = 4
+    SHOWAVATAR = 5
 
     @staticmethod
     def fromString(moderationType):
@@ -55,5 +57,7 @@ class ModerationType(Enum):
             "mute":    ModerationType.MUTE,
             "unmute":  ModerationType.UNMUTE,
             "block":   ModerationType.BLOCK,
-            "unblock": ModerationType.UNBLOCK
+            "unblock": ModerationType.UNBLOCK,
+            "hideAvatar": ModerationType.HIDEAVATAR,
+            "showAvatar": ModerationType.SHOWAVATAR
         }[moderationType]
